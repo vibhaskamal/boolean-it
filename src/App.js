@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { convertTextToBoolean } from './services/convertTextToBoolean';
 import './App.css';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const placeholderText = 'E.g. a and b or c not d';
 
@@ -9,7 +10,7 @@ function App() {
   let [userInput, setUserInput] = useState('');
   let [convertedText, setconvertedText] = useState('');
 
-  function handleInputChange(e){
+  function handleInputChange(e) {
     setUserInput(e.target.value);
     setconvertedText(convertTextToBoolean(e.target.value));
   }
@@ -27,15 +28,31 @@ function App() {
 
   return (
     <div className="App">
-      <label>User input: </label>
-      <input type="text" placeholder={placeholderText} value={userInput} onChange={event => handleInputChange(event)} />
+      <label>Enter text</label><br /><br />
+      <TextField
+        id="outlined-basic"
+        label={placeholderText}
+        value={userInput}
+        onChange={event => handleInputChange(event)}
+        variant="outlined" />
+      <br /><br />
+      <div>
+        <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Button variant="contained" onClick={handleClear}>Clear</Button>
+      </div>
       <br />
-      <Button variant="outlined" onClick={handleSubmit}>Submit</Button>
-      <Button variant="outlined" onClick={handleClear}>Clear</Button>
-      <br />
-      <label>Converted text: </label> <input type="text" value={convertedText} readOnly={true} />
+      <label>Converted text</label><br /><br />
+      <TextField
+        id="outlined-basic"
+        value={convertedText}
+        readOnly={true}
+        variant="outlined" />
     </div>
   );
 }
 
 export default App;
+
+// Potential additions:
+// Provide option to switch between text field and text area
