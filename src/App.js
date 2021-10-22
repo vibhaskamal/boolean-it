@@ -8,7 +8,7 @@ function App() {
     console.log(input);
   };
 
-  function handleClear(e) {
+  function handleClear() {
     setInput('');
   };
 
