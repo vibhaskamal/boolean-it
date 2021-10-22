@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 function App() {
-  let [userInput, setUserInput] = useState('h and m');
+  let [userInput, setUserInput] = useState('');
   let [displayText, setDisplayText] = useState('');
   let [convertedText, setconvertedText] = useState('');
 
@@ -12,10 +12,7 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // console.log(userInput);
     setDisplayText(userInput);
-    let str = userInput.length;
-    // console.log(str);
     convertToBoolean(userInput);
   };
 
@@ -35,20 +32,14 @@ function App() {
         if ((i + 1) < len && text.charAt(i + 1) === 'a' && (i + 2) < len && text.charAt(i + 2) === 'n'
           && (i + 3) < len && text.charAt(i + 3) === 'd' && (i + 4) < len && text.charAt(i + 4) === ' ') {
           text = text.slice(0, i) + ' ∧' + text.slice(i + 4);
-          // console.log(`text: ${text}`);
-          // console.log('and');
         }
         else if ((i + 1) < len && text.charAt(i + 1) === 'n' && (i + 2) < len && text.charAt(i + 2) === 'o'
           && (i + 3) < len && text.charAt(i + 3) === 't' && (i + 4) < len && text.charAt(i + 4) === ' ') {
           text = text.slice(0, i) + ' ¬' + text.slice(i + 4);
-          // console.log(`text: ${text}`);
-          // console.log('not');
         }
         else if ((i + 1) < len && text.charAt(i + 1) === 'o' && (i + 2) < len && text.charAt(i + 2) === 'r'
           && (i + 3) < len && text.charAt(i + 3) === ' ') {
           text = text.slice(0, i) + ' ∨' + text.slice(i + 3);
-          // console.log(`text: ${text}`);
-          // console.log('or');
         }
       }
       i++;
@@ -59,9 +50,7 @@ function App() {
   return (
     <div className="App">
       <label>User input: </label>
-      {/* <input type="text" value={userInput} onChange={event => setUserInput(event.target.value)} /> */}
       <input type="text" value={userInput} onChange={event => handleInputChange(event)} />
-
       <br />
       <button onClick={handleSubmit}>
         Submit
