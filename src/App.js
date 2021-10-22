@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './App.css';
 function App() {
   let [userInput, setUserInput] = useState('');
-  // let [displayText, setDisplayText] = useState('');
   let [convertedText, setconvertedText] = useState('');
 
   function handleInputChange(e){
@@ -12,13 +11,11 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // setDisplayText(userInput);
     convertToBoolean(userInput);
   };
 
   function handleClear() {
     setUserInput('');
-    // setDisplayText('');
     setconvertedText('');
     console.clear();
   };
@@ -58,8 +55,6 @@ function App() {
       <button onClick={handleClear}>
         Clear
       </button>
-      {/* <br />
-      <label>Display text: </label> <input type="text" value={displayText} readOnly={true} /> */}
       <br />
       <label>Converted text: </label> <input type="text" value={convertedText} readOnly={true} />
     </div>
