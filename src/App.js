@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { convertTextToBoolean } from './services/convertTextToBoolean';
 import './App.css';
+import Button from '@mui/material/Button';
+
+const placeholderText = 'E.g. a and b or c not d';
 
 function App() {
   let [userInput, setUserInput] = useState('');
@@ -25,14 +28,10 @@ function App() {
   return (
     <div className="App">
       <label>User input: </label>
-      <input type="text" value={userInput} onChange={event => handleInputChange(event)} />
+      <input type="text" placeholder={placeholderText} value={userInput} onChange={event => handleInputChange(event)} />
       <br />
-      <button onClick={handleSubmit}>
-        Submit
-      </button>
-      <button onClick={handleClear}>
-        Clear
-      </button>
+      <Button variant="outlined" onClick={handleSubmit}>Submit</Button>
+      <Button variant="outlined" onClick={handleClear}>Clear</Button>
       <br />
       <label>Converted text: </label> <input type="text" value={convertedText} readOnly={true} />
     </div>
