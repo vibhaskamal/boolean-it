@@ -3,6 +3,11 @@ import { convertTextToBoolean } from './services/convertTextToBoolean';
 import './App.css';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import Typography from '@mui/material/Typography';
 
 const placeholderText = 'E.g. a and b or c not d';
 
@@ -28,7 +33,10 @@ function App() {
 
   return (
     <div className="App">
-      <label>Enter text</label><br /><br />
+      <Typography variant="h5" gutterBottom component="div">
+        Enter text
+      </Typography>
+      <br />
       <TextField
         id="outlined-basic"
         label={placeholderText}
@@ -42,7 +50,10 @@ function App() {
         <Button variant="contained" onClick={handleClear}>Clear</Button>
       </div>
       <br />
-      <label>Converted text</label><br /><br />
+      <Typography variant="h5" gutterBottom component="div">
+        Converted text
+      </Typography>
+      <br />
       <TextField
         id="outlined-basic"
         value={convertedText}
