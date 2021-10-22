@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 function App() {
-  let [userInput, setUserInput] = useState('');
+  let [userInput, setUserInput] = useState('h and m');
   let [displayText, setDisplayText] = useState('');
   let [convertedText, setconvertedText] = useState('');
 
@@ -37,18 +37,32 @@ function App() {
         // Checking for 'and'
         if ((i + 1) < len && text.charAt(i + 1) === 'a' && (i + 2) < len && text.charAt(i + 2) === 'n'
           && (i + 3) < len && text.charAt(i + 3) === 'd' && (i + 4) < len && text.charAt(i + 4) === ' ') {
+          // text = text.substr(i+2, i+4)
+          text = text.slice(0, i) + ' &' + text.slice(i + 4);
+
+          console.log(`text: ${text}`);
           console.log('and');
+          // i = i + 3;
         }
         else if ((i + 1) < len && text.charAt(i + 1) === 'n' && (i + 2) < len && text.charAt(i + 2) === 'o'
           && (i + 3) < len && text.charAt(i + 3) === 't' && (i + 4) < len && text.charAt(i + 4) === ' ') {
+          text = text.slice(0, i) + ' ~' + text.slice(i + 4);
+          console.log(`text: ${text}`);
           console.log('not');
+          // i = i + 3;
         }
         else if ((i + 1) < len && text.charAt(i + 1) === 'o' && (i + 2) < len && text.charAt(i + 2) === 'r'
           && (i + 3) < len && text.charAt(i + 3) === ' ') {
+          text = text.slice(0, i) + ' ||' + text.slice(i + 3);
+          console.log(`text: ${text}`);
           console.log('or');
+          // i = i + 2;
         }
-      };
+      }
       i++;
+      // else {
+      //   i++;
+      // }
     }
   }
 
