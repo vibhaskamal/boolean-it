@@ -43,6 +43,10 @@ function App() {
           && (i + 3) < len && text.charAt(i + 3) === 't' && (i + 4) < len && text.charAt(i + 4) === ' ') {
           console.log('not');
         }
+        else if ((i + 1) < len && text.charAt(i + 1) === 'o' && (i + 2) < len && text.charAt(i + 2) === 'r'
+          && (i + 3) < len && text.charAt(i + 3) === ' ') {
+          console.log('or');
+        }
       };
       i++;
     }
