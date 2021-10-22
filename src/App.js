@@ -1,29 +1,25 @@
 import { useState } from 'react';
-import './App.css';
 import { convertTextToBoolean } from './services/convertTextToBoolean';
+import './App.css';
+
 function App() {
   let [userInput, setUserInput] = useState('');
   let [convertedText, setconvertedText] = useState('');
 
   function handleInputChange(e){
     setUserInput(e.target.value);
-    convertToBoolean(e.target.value);
+    setconvertedText(convertTextToBoolean(e.target.value));
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    convertToBoolean(userInput);
+    setconvertedText(convertTextToBoolean(userInput));
   };
 
   function handleClear() {
     setUserInput('');
     setconvertedText('');
     console.clear();
-  };
-
-  function convertToBoolean(text) {
-    text = convertTextToBoolean(text);
-    setconvertedText(text);
   };
 
   return (
