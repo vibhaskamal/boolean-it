@@ -49,8 +49,3 @@ function App() {
 }
 
 export default App;
-
-
-
-// Potential additions:
-// Provide option to switch between text field and text area
