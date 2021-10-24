@@ -21,12 +21,12 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div>
         <Box sx={{ flexGrow: 1 }}>
           <AppBar position="static">
             <Toolbar variant="dense">
               <Typography variant="h6" color="inherit" component="div">
-                <RouterLink to="/home" style={{ color: 'white', 'textDecoration': 'none' }} underline="none">Boolean-it</RouterLink>
+                <RouterLink to="/" style={{ color: 'white', 'textDecoration': 'none' }} underline="none">Boolean-it</RouterLink>
               </Typography>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <Typography variant="h6" color="inherit" component="div">
@@ -35,8 +35,8 @@ function App() {
             </Toolbar>
           </AppBar>
         </Box>
-        <Switch>
-          <Route path="/home">
+        <Switch style={{ 'marginTop': '40px' }}>
+          <Route exact={true} path="/">
             <TextToBoolean />
           </Route>
           <Route path="/instructions">
