@@ -1,5 +1,5 @@
 # What is Boolean-it
-It is a small React app that converts text written in plain english to its boolean counterpart.
+It is a small React app that converts text written in plain english to its boolean counterpart. <br />
 E.g. 'a and b or c' would get converted to 'a ∧ b ∨ c'
 
 # How to run the app
